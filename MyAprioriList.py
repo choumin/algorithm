@@ -22,6 +22,7 @@ class Ruleitem(object):
         self.condsup = condsup
         self.rulesup = rulesup
 
+#AARC分类器类，使用self.rules对测试样的类别进行预测
 class Classifier(object):
     def __init__(self):
         self.rules = []
@@ -44,8 +45,8 @@ class AARC(object):
     
     #对多个具有相同condset的ruleitem进行择优选择，只保留一个condset对应的ruleitem
     #选择的策略是：首先选取具有最大condsup的ruleitem，
-    #若有多个，则选取具有最大confidence的ruleitem，
-    #若有多个，则直接选取第一个
+    #若还有多个，则选取具有最大confidence的ruleitem，
+    #若还有多个，则直接选取第一个
     def get_best(self, l):
         #print len(l)
         max_sup_list = []
